@@ -8,15 +8,16 @@ public class PhoneBook {
     String regexPhone = "[0-9]+";
 
     public void setPhoneBook(String textIn) {
-        if (textIn.matches(regexName)) {
-            addName(textIn);
+        if (textIn.equals("LIST")) {
+            System.out.println(phoneBook.toString());
         } else if (textIn.matches(regexPhone)) {
             addPhone(textIn);
+        } else if (textIn.matches(regexName)){
+            addName(textIn);
         } else {
             System.out.println("Проверьте введенный техт");
         }
-        //addPhone(textIn);
-        System.out.println(phoneBook.toString());
+
     }
 
     private void addPhone(String textIn) {
@@ -25,7 +26,7 @@ public class PhoneBook {
             String name = new Scanner(System.in).nextLine();
             phoneBook.put(textIn, name);
         } else {
-            System.out.println("Данный номер " + textIn + " уже есть в справочнике");
+            System.out.println("Абонент с номер " + textIn + " уже есть в справочнике");
         }
     }
 
@@ -35,7 +36,7 @@ public class PhoneBook {
             String phone = new Scanner(System.in).nextLine();
             phoneBook.put(phone, textIn);
         } else {
-            System.out.println("Абонент с таким именем " + textIn + " уже есть в справочнике");
+            System.out.println("Абонент с именем " + textIn + " уже есть в справочнике");
         }
 
     }
