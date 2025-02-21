@@ -8,6 +8,7 @@ public class PhoneBook {
     String regexPhone = "[0-9]+";
 
     public void setPhoneBook(String textIn) {
+
         if (textIn.equals("LIST")) {
             System.out.println(phoneBook.toString());
         } else if (textIn.matches(regexPhone)) {
