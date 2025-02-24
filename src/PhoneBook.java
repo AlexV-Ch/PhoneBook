@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class PhoneBook {
     HashMap<String, String> phoneBook = new HashMap<>();
-    String regexName = "[a-zA-Zа-яА-Я]+";
 
     public void setPhoneBook(String textIn) {
 
