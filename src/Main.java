@@ -10,7 +10,6 @@ public class Main {
         while (true) {
             System.out.println("Введите номер, имя или команду:");
             String textIn = new Scanner(System.in).nextLine();
-        //Вызов метода для textIn
             phoneBook.setPhoneBook(textIn);
 
         }

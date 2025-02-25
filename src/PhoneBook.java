@@ -7,8 +7,6 @@ public class PhoneBook {
     public void setPhoneBook(String textIn) {
 
         if (textIn.equals("LIST")) {
-//            System.out.println(phoneBook.toString());
-//            System.out.println();
             printList(phoneBook);
         } else if (isValidPhone(textIn)) {
             addPhone(textIn);
