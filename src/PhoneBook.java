@@ -7,12 +7,12 @@ public class PhoneBook {
     public void setPhoneBook(String textIn) {
 
         if (textIn.equals("LIST")) {
-            System.out.println(phoneBook.toString());
-            System.out.println();
+//            System.out.println(phoneBook.toString());
+//            System.out.println();
             printList(phoneBook);
         } else if (isValidPhone(textIn)) {
             addPhone(textIn);
-        } else if (isValidName(textIn)){
+        } else if (isValidName(textIn)) {
             addName(textIn);
         } else {
             System.out.println("Проверьте введенный техт");
@@ -81,13 +81,23 @@ public class PhoneBook {
     }
 
     private void printList(HashMap<String, String> phoneBook) {
+        HashMap<String, String> nameBook = new HashMap<>();
 
         for (String phone : phoneBook.keySet()) {
-            System.out.println(phoneBook.get(phone));
-            System.out.println(phone);
+            if (!nameBook.containsKey(phoneBook.get(phone))) {
+                nameBook.put(phoneBook.get(phone), phone);
+            } else {
+                for (String name : nameBook.keySet()) {
+                    if (name.equals(phoneBook.get(phone))) {
+                        nameBook.put(phoneBook.get(phone), phone + " " + nameBook.get(name));
+                    }
+                }
+            }
+        }
+        for (String name : nameBook.keySet()) {
+            System.out.println(name + " - " + nameBook.get(name));
         }
     }
-
 }
 
 
