@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class PhoneBook {
     HashMap<String, String> phoneBook = new HashMap<>();
@@ -79,7 +80,8 @@ public class PhoneBook {
     }
 
     private void printList(HashMap<String, String> phoneBook) {
-        HashMap<String, String> nameBook = new HashMap<>();
+        //HashMap<String, String> nameBook = new HashMap<>();
+        TreeMap<String, String> nameBook = new TreeMap<>();
 
         for (String phone : phoneBook.keySet()) {
             if (!nameBook.containsKey(phoneBook.get(phone))) {
