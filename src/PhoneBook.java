@@ -80,7 +80,6 @@ public class PhoneBook {
     }
 
     private void printList(HashMap<String, String> phoneBook) {
-        //HashMap<String, String> nameBook = new HashMap<>();
         TreeMap<String, String> nameBook = new TreeMap<>();
 
         for (String phone : phoneBook.keySet()) {
